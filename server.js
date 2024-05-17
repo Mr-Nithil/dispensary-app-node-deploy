@@ -8,7 +8,7 @@ const multer = require("multer");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 
-require('dotenv').config({path:__dirname+'/./../../.env'})
+require('dotenv').config()
 
 
 app.use(express.urlencoded({ extended: false }));
@@ -31,7 +31,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     store: MongoStore.create({
-        mongoUrl: process.env.URI,
+        mongoUrl: process.env.MONGODB_URI,
         collectionName: 'sessions'
     }),
     cookie: {
