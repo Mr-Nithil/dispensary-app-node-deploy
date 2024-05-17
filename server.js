@@ -27,7 +27,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 app.use(session({
-    secret: 'nishe123',
+    secret: process.env.SECRET_KEY,
     resave: false,
     saveUninitialized: true,
     store: MongoStore.create({
