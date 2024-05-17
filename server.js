@@ -24,10 +24,11 @@ const storage = multer.diskStorage({
     }
 });
 
+
 const upload = multer({ storage: storage });
 
 app.use(session({
-    secret: process.env.SECRET_KEY,
+    secret: process.env.SESSION_SECRET || 'default_secret',
     resave: false,
     saveUninitialized: true,
     store: MongoStore.create({
