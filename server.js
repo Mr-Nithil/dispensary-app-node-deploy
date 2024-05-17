@@ -7,7 +7,8 @@ const collection = require("./mongodb");
 const multer = require("multer");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
-require('dotenv').config();
+
+require('dotenv').config({path:__dirname+'/./../../.env'})
 
 
 app.use(express.urlencoded({ extended: false }));
