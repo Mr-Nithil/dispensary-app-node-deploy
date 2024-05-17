@@ -28,7 +28,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     store: MongoStore.create({
-        mongoUrl: 'mongodb://localhost:27017/DispensaryDb',
+        mongoUrl: 'mongodb+srv://nithilsheshan:541u8r4dxVOkdGnY@cluster0.gdp4gzl.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
         collectionName: 'sessions'
     }),
     cookie: {
